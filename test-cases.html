@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test cases</title>
+    <style media="screen">
+      img {border: 1px solid #08f}
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript">
+
+      var image = new Image()
+      image.onload = function(){
+
+        tracker
+          .findInImage(image)
+          .then(function (state) {
+            console.log("found: " + state)
+          })
+          .catch(function (err) {
+            console.error("Error: " + err)
+          })
+
+      }
+      image.src = 'test-cases/0.jpg'
+      document.body.appendChild(image)
+
+
+
+    </script>
+  </body>
+</html>
